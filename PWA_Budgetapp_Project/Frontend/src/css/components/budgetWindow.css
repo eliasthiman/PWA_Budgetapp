@@ -1,0 +1,85 @@
+.budget-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: inherit;
+    box-sizing: content-box;
+    border: #5983FC 1px solid; 
+    color: black;
+    cursor: pointer;   
+    padding: 20px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    min-width: 90%;
+    max-height: 100px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
+}
+
+.budget-window h3{
+    margin: 0px auto;
+    padding: 5px;
+    color: rgb(53, 53, 53); 
+}
+
+.budget-window p{
+    margin: 0px auto;
+    padding: 5px;
+    color: rgb(53, 53, 53); 
+}
+
+.budget-window a{
+    padding: 0px;
+    margin: 0px auto;
+}
+
+.budget-window:hover{
+    box-shadow:  #5983FC 0px 2px 5px -1px,  #5983FC 0px 1px 3px -1px;
+}
+
+
+.budget{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.budget-link{
+    text-decoration: none;
+}
+
+
+.budget-window button{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#budget-button-home{
+    font-size: small;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+.budget-window h3{
+    font-size: medium;
+}
+
+.budget-window p{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+
+.budget-window:hover{
+    border: #5983FC 1px solid; 
+}
+
+
+}

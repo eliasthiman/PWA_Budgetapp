@@ -1,0 +1,679 @@
+@import 'components/expense.css';
+@import 'components/budgetWindow.css';
+@import 'components/addButton.css';
+@import 'components/form.css';
+@import 'components/suggestion.css';
+@import 'components/suggestion.css';
+@import 'components/selectedBudget.css';
+@import 'components/loader.css';
+@import 'components/toastnotification.css';
+
+
+
+.header-element{
+    background-color:rgba(137, 43, 226, 0.205); 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    text-align: center;
+}
+
+
+
+body {
+/*    font-family: Arial, sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(89, 131, 252, 1);
+    background-image: linear-gradient(90deg, rgba(89, 131, 252, 1) 0%, rgba(41, 53, 86, 1) 100%);
+}
+  
+h2{
+    color: rgb(53, 53, 53); 
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+.expenseTitle{
+    color: #ad59fc;
+}
+
+.budgetTitle{
+    color: #5983FC;
+}
+
+.sidebar {
+    height: 100%;
+    width: 100px; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.box ul{
+    list-style-type: none;
+}
+
+
+#content {
+    margin-left: 100px; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+
+.boxes-container-col {
+    display: flex;
+/*    overflow: visible; */
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 100px;
+    margin: 0px auto;
+}
+
+
+.boxes-container-top {
+    display: flex;
+/*   overflow: visible; */
+    flex-direction: row; 
+    flex-wrap: nowrap;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 100px;
+    margin: 0px auto;
+    padding: 5px;
+}
+
+.boxes-container-mid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 100px;
+    margin: 0px auto;
+    padding: 5px;
+}
+
+/*
+.boxes-container-bottom {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 100px;
+    margin: 100px;
+}
+*/
+
+#box {
+    align-self: center;
+    width: 70%; 
+    max-width: 700px;
+    margin: 10px 10px auto; 
+/*    background-color: rgba(255, 255, 255, 0.171); */
+/*    margin-bottom: 20px; */
+    border-radius: 5px;
+/*    margin-left: 20px; */
+}
+
+
+#box-selected{
+    display: flex;
+    align-self: center; 
+    border: 2px red solid;
+    height: 100vh;
+    margin: 5px auto;
+/*    background-color: rgba(255, 255, 255, 0.171); */
+    padding: 20px auto;
+/*    margin-bottom: 20px; */
+    border-radius: 5px;
+/*    margin-left: 20px; */
+    background-color: white;
+}
+
+
+
+#box h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+#box p {
+    margin-bottom: 0;
+    color: rgb(53, 53, 53); 
+}
+
+.listBtn {
+    list-style-type: none;
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+}
+
+#delete-button{
+    background-color: rgb(207, 47, 47);
+    height: 100%;
+    box-sizing: content-box;
+    max-width: 35px;
+}
+
+
+#delete-button:hover{
+    background-color: rgb(145, 32, 32);
+}
+
+#delete-button:active{
+    background-color: rgb(145, 32, 32);
+    transition-delay: 2s;
+    transform: scale(80%);
+}
+
+  .bottom-menu {
+    display: none; 
+  }
+
+
+@media screen and (max-width: 950px) {
+
+
+    .boxes-container-col {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        margin-top: 100px;
+        margin: 0px auto;
+    }
+
+    .boxes-container-top {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .boxes-container-mid {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        
+    }
+  }
+  
+  
+@media screen and (max-width: 768px) {
+
+    .boxes-container-top {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .boxes-container-mid {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        
+    }
+
+    #box {
+    /*    width: 70%;  */
+        min-width: 300px; 
+   /*     padding: 20px; */
+/*   border-radius: 5px; */
+        min-height: 200px;
+        margin: 10px 10px auto; 
+    }
+
+
+    #content{
+        margin-left: 0px;
+    }
+
+    #content h1{
+        font-size: x-large;
+    }
+
+
+    .sidebar {
+      display: none; 
+    }
+  
+    .bottom-menu {
+      display: block; 
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      height: 80px;
+    }
+  
+    .bottom-menu ul {
+      list-style-type: none;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .bottom-menu ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  
+    .bottom-menu ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  
+/*
+
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(89, 131, 252, 1);
+    background-image: linear-gradient(90deg, rgba(89, 131, 252, 1) 0%, rgba(41, 53, 86, 1) 100%);  
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#addPostBtnContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.addPostBtn{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:20px;
+    font-family:Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    border: 2px solid #f8f7f7;
+    transition: 0.3s;
+    box-shadow: 0px 6px 0px -2px rgb(0, 0, 0);
+    background-color: #5983FC;
+}
+
+.addPostBtn:active{
+    box-shadow: 0px 0px 0px 5px rgb(22, 184, 122);
+    transition-delay: -1s;
+}
+
+
+#appBody{
+    -webkit-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    min-height: 500px;
+    border-radius: 20px 120px 20px 120px;
+    
+}
+
+#appBody div{
+    background-color: rgb(147, 212, 191);
+    border: 2px solid rgb(30, 53, 45);
+    color: rgb(30, 53, 45);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px 80px 20px 80px;
+    min-width: 300px
+}
+
+
+#addingPostBody {
+    -webkit-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    min-height: 500px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+#nav-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    min-height: 23vh;
+}
+
+
+.nav-list{
+    display: inline-flex;
+    list-style: none;
+    padding: 0px;
+}
+
+.nav-list li{
+    font-size: 20px;
+    padding: 30px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(89, 131, 252, 1);
+    background-image: linear-gradient(90deg, rgba(89, 131, 252, 1) 0%, rgba(41, 53, 86, 1) 100%); 
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    
+}
+
+main {
+    padding: 20px;
+}
+
+
+#addPostBtnContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.addPostBtn{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:20px;
+    font-family:Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    border: 2px solid #f8f7f7;
+    transition: 0.3s;
+    box-shadow: 0px 6px 0px -2px rgb(0, 0, 0);
+    background-color: #5983FC;
+}
+
+.addPostBtn:active{
+    box-shadow: 0px 0px 0px 5px rgb(22, 184, 122);
+    transition-delay: -1s;
+}
+
+
+#appBody{
+    -webkit-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    min-height: 500px;
+    border-radius: 20px 120px 20px 120px;
+    
+}
+
+#appBody div{
+    background-color: rgb(147, 212, 191);
+    border: 2px solid rgb(30, 53, 45);
+    color: rgb(30, 53, 45);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px 80px 20px 80px;
+    min-width: 300px
+}
+
+
+#addingPostBody {
+    -webkit-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    box-shadow: 2px 9px 24px -8px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    min-height: 500px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+    @media screen and (max-width: 600px) {
+
+#bottom-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100px;
+    background-color: white;
+}
+
+
+.bottom-nav{
+    display: inline-flex;
+    list-style: none;
+    padding: 0px;
+}
+
+.bottom-nav li{
+    font-size: 20px;
+    padding: 40px;
+}
+
+
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.main{
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.side-panel-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: white;
+    background: rgb(0, 165, 88);
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.side-panel-toggle:hover{
+    background: rgb(3, 107, 59);
+}
+
+
+.sp-icon-close{
+    display: none !important;
+}
+
+.side-panel {
+    width: 200px;
+    flex-shrink: 0;
+    padding: 20px;
+    color: white;
+    background: rgb(0, 165, 88);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.side-panel-open .side-panel{
+    display: initial;    
+}
+
+.side-panel-open .sp-icon-close{
+    display: initial !important;
+}
+
+
+
+*/

@@ -1,0 +1,54 @@
+
+
+.suggestion-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+   /* border: 1.5px solid black; */
+    margin: 10px auto;
+}
+
+
+.suggestion-box h3{
+    color: black;
+    text-align: center;
+}
+
+.suggestion-box h4{
+    text-align: center;
+}
+
+.suggestion-box #budget{
+    align-self: center;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 10px;
+}
+
+
+#answer-Btn {    
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+.answer-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.answer-box button{
+    margin: 30px;
+    padding: 20px;
+    font-size: medium;
+    font-weight: bold;
+}

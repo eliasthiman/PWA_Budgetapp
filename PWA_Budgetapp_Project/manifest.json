@@ -1,0 +1,42 @@
+{
+  "name": "BudgetBuddy",
+  "short_name": "BudgetBuddy",
+  "description": "Keep a closer eye on your personal economy",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/src/img/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/img/icon96.png",
+      "sizes": "96x96", 
+      "type": "image/png"
+    },
+    {
+      "src": "/Frontend/src/img/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/Frontend/src/img/primary/apple180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "Frontend/src/img/Primary/Bb192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Frontend/src/img/Primary/android-chrome512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

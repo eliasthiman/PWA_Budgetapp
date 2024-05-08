@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple budget application for everyone!">
+    <link rel="manifest" href="/manifest.json"> 
+    <meta name="theme-color" content="#5983fc">
+    <link rel="stylesheet" href="./Frontend/src/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Frontend/src/img/primary/apple180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Frontend/src/img/primary/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Frontend/src/img/primary/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>BudgetBuddy</title>
+    <script type="text/javascript" src="./Backend/DB.js"></script> 
+    <script type="text/javascript" src="./Frontend/src/js/Main.js"></script> 
+    <script type="text/javascript" src="./Frontend/src/js/App.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Api.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Window.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Budget.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Expense.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Form.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Home.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/CostOfLiving.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Suggestion.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Loading.js"> </script>
+    <script type="text/javascript" src="./Frontend/src/js/Toast.js"> </script>
+    
+    
+</head>
+<body>
+ 
+  <div id="wrapper">
+
+
+<!-- Main Content -->
+
+<div class="content">
+
+  <div class="boxes-container-col">
+    <div id="box">
+      <!--  <h2> Create a budget</h2>  -->
+            <div class="container col greeter">
+              <h3 class="Greeter" style=color:#5983FC;> Welcome to BudgetBuddy! </h3>
+              <h4 style="text-align: center;">This is the Dashboard!, here you can automatically 
+                generate budgets via budget suggestion!
+              You can also create budgets yourself and add expenses to them!</h4>
+          </div>
+    </div>
+    <div id="box">
+<!--  <h2> Create a budget</h2>  -->
+      <div class="container col">
+        <h3 class="col-title" style="display: block;"> Budget suggestion by cost of living.</h3>
+          <form id="col">
+            <div class="form-group city" style="display: block;">
+            <label for="cityPick">City</label>
+              <select name="cityPick" id="cityPick">
+                  <option value="" disabled selected hidden>Pick a City</option>
+              </select> 
+            </div>
+            <div class="form-group category" style="display: none;">
+            <label for="categoryPick">Category</label> 
+              <select name="categoryPick" id="categoryPick">
+                  <option value="" disabled selected hidden>Pick a Category</option>
+              </select>   
+            </div>
+            <div class="form-group household" style="display: none;">
+              <label for="householdPick">Household Size</label>
+                <select name="householdPick" id="householdPick">
+                  <option value="" disabled selected hidden>Specify your household size</option>
+                </select>
+                </div><br>
+             <button class="addBtn colBtn" type="submit">Generate</button> 
+          </form>
+        <div class="col-output">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="boxes-container-top">
+    <div id="box">
+<!--  <h2> Create a budget</h2>  -->
+      <div class="container">
+        <h3 class="budgetTitle">Specify and create your Budget</h3>
+          <form id="budgetForm">
+            <div class="form-group">
+              <label for="budgetTitle">Title</label>
+              <input type="text" id="budgetTitle" name="budgetTitle" placeholder="Specify your budget title, e.g., Food" maxlength="30" required>
+            </div>
+            <div class="form-group">
+              <label for="budgetAmount">Amount</label>
+              <input type="number" id="budgetAmount" name="budgetAmount" min="10" step="1" placeholder="Specify your budget limit, e.g., 500" maxlength="10" required>
+            </div> <br/>
+              <button class="addBtn" type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+    <div id="box">
+<!--      <h2> Add an Expense</h2> -->
+      <div class="container">
+        <h3 class="expenseTitle">Add an expense</h3>
+          <form id="expenseForm">
+            <div class="form-group">
+              <label for="expenseTitle">Title</label>
+              <input type="text" id="expenseTitle" name="expenseTitle" placeholder="Give your expense a title, e.g., Lunch" maxlength="15" required>
+            </div>
+            <div class="form-group">
+              <label for="expenseAmount">Amount</label>
+              <input type="number" id="expenseAmount" name="expenseAmount" min="1" step="1" placeholder="Specify your expense, e.g., 25" maxlength="10" required>
+            </div>
+            <div class="form-group">
+              <label for="budgetPick">Budget</label>
+              <select id="budgetPick" name="budgetPick" required>
+                <option value="" disabled selected hidden>Pick a budget</option>
+              </select>
+            </div> <br/>
+              <button class="addBtn expense" type="submit">Add</button> 
+          </form>
+      </div>
+    </div>
+  </div>
+    <div class="boxes-container-mid">
+      <div id="box">
+        <div class="container budget">
+          <h3 class="budgetTitle">Budgets</h3> 
+         
+          
+          <!-- Budget content -->
+
+        </div>
+      </div>
+      <div id="box">
+        <div class="container expense-container">
+          <h3 class="expenseTitle">Expenses</h3>
+            <div class="table-header">
+              <span>Title</span><span>Amount</span><span>Budget</span>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+<!-- </div> -->
+<!-- </div> -->
+</body>
+</html>
+
+
+
+
+
+
+<!--    <li><a href="/" class="nav__link" data-link="">Home</a></li> 
+
+<div class="expense-table">
+<div class="expense-body">
+
+
+              
+            Expense content 
+
+            </div>
+
+
+   <div class="table-header">
+                <span>Title</span><span>Amount</span><span>Budget</span><span>Date</span>
+              </div>
+
+
+
+<div class="form-group student" style="display: none;">
+              <fieldset>
+                <legend>Are you a student and possible on a tight budget?</legend>
+
+                <div class="radio-container">
+                  <input type="radio" id="radio1" name="studentPick" value="Yes">
+                  <label for="radio1">Yes</label>
+                </div>
+              
+                <div class="radio-container">
+                  <input type="radio" id="radio2" name="studentPick" value="No">
+                  <label for="radio2">No</label>
+                </div>
+              </fieldset>
+              </div> 
+
+
+
+
+<div class="form-group car" style="display: none;">
+                <fieldset>
+                  <legend>Do you own a car?</legend>
+  
+                  <div class="radio-container">
+                    <input type="radio" id="radio1" name="carPick" value="Yes">
+                    <label for="radio1">Yes</label>
+                  </div>
+                
+                  <div class="radio-container">
+                    <input type="radio" id="radio2" name="carPick" value="No">
+                    <label for="radio2">No</label>
+                  </div>
+                </fieldset>
+              </div> 
+
+
+
+ <input list="budgets" id="budgetPick" name="budgetPick"/> 
+
+
+  
+<div class="bottom-menu">
+  <ul>
+    
+  </ul>
+</div>
+
+  Sidebar Menu 
+<div class="sidebar">
+  <ul>
+     <li><a href="/" class="nav__link" data-link="">Home</a></li> 
+  </ul>
+</div>
+
+
+
+
+
+
+   <thead>
+              <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Budget</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+
+  
+     <div id="wrapper">
+        <header>
+            <h1>Feb. 2024</h1>
+            <ul id="menu">
+                
+            </ul>
+            </header>
+    
+    
+            <div id="appBody">
+    
+            </div>
+            <div id="addPostBtnContainer">
+                <div class="addPostNav">
+    
+                </div>
+            </div>
+    
+            <footer id="nav-wrapper">
+            <nav>
+                <ul class="nav-list"> 
+                <li><a href="/" class="nav__link" data-link="">Home</a></li>
+                <li><a href="/addPost" class="addPostBtn" data-link="">Add Budget</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="./src/js/Main.js" ></script> 
+    <script type="text/javascript" src="../src/js/Appbody.js"> </script>
+    <script type="text/javascript" src="../src/js/Window.js"> </script>
+                <nav>
+                    <a href="/addPost" role="button" aria-label="Add Budget" class="nav__link" data-link="">
+                        <button class="addPostBtn">Add Budget</button>
+                    </a>
+                </nav>
+
+
+<main>
+        <p>This is a simple Progressive Web App example.</p>
+        <p>Feel free to explore!</p>
+        <input type="text" id="pokemonName" placeholder="Enter Pokémon name..."> 
+        <button onclick="fetchData()">Fetch Pokémon</button>
+
+        <img src="" alt="Pokémon Sprite" id="pokemonSprite" style="display: none">
+
+    </main>
+    <script src="./src/js/Main.js"></script>
+    <script src="./Server/Apifetch.js"></script>
+
+
+    <script src="../src/js/Main.js"></script>
+    <script src="../src/js/Appbody.js"></script>
+    <script src="../src/js/Window.js"></script>
+    <script src="../src/js/Button.js"></script>
+
+
+
+
+
+<header>
+        <h1>Feb. 2024</h1>
+        <ul id="menu">
+            
+        </ul>
+    </header>
+        <div id="appBody">
+
+        </div>
+        <div id="addPostBtnContainer">
+            <div class="addPostNav">
+
+            </div>
+        </div>
+        
+
+    <footer id="bottom-buttons">
+        <nav>
+            <ul class="bottom-nav">
+                <li><a href="/" class="nav__link" data-link="">Home</a></li>
+                <li><a href="/addPost" class="addPostBtn" data-link="">Add Budget</a></li>
+                <li>News</li>
+            </ul>
+        </nav>
+
+    </footer>
+    <script type="module" src="../src/static/index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

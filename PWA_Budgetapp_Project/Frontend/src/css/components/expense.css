@@ -1,0 +1,100 @@
+.expense-table{
+    font-size: 14px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.expense-table span{
+    background-color: blueviolet;
+    color: white;
+    text-align: left;
+    max-width: 100%;
+}
+
+.expense-table span{
+    padding: 6px 8px;
+    font-weight: normal;
+}
+
+.expense-table ul:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+
+.table-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 100%;
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: auto;
+    color: white;
+    font-weight: 500;
+    margin: 5px auto;
+}
+
+.table-header span{
+    margin: 10px;
+    background-color: blueviolet;
+    margin: 5px auto;
+}
+
+
+.expense-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;    
+}
+
+.expense-spec-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    margin: 5px auto;
+    padding: 5px auto;
+    min-width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    color: rgb(53, 53, 53); 
+}
+
+.expense-spec-list p{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.expense-spec-list button{
+
+    margin: 5px auto;
+    min-width: 5px;
+
+}
+
+
+
+
+
+@media screen and (max-width: 950px) {
+
+    .expense-table{
+        border-collapse: collapse;
+    /*    font-size: 14px; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+  }
