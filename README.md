@@ -4,7 +4,7 @@ Welcome to BudgetBuddy! This is a Progressive Web Application (PWA) built with J
 
 ## Published link to application
 
-Best viewed on a mobilephone or a tablet, since it's developed to be portable.
+Best viewed on a mobile phone or a tablet, since it's developed to be portable.
 
 https://imaginative-souffle-069340.netlify.app/
 
