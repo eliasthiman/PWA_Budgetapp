@@ -25,7 +25,7 @@ To get started with further development on BudgetBuddy, follow these steps:
 
 ```bash
 # Clone the repository
-git clone [repository-url]
+git clone https://github.com/eliasthiman/PWA_Budgetapp.git
 
 # Navigate to the project directory
 cd [project-directory]
