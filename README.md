@@ -2,6 +2,10 @@
 
 Welcome to BudgetBuddy! This is a Progressive Web Application (PWA) built with JavaScript, leveraging the power of IndexedDB as its backend storage solution.
 
+## Published link to application
+
+Best viewed on a mobilephone or a tablet, since it's developed to be portable.
+
 https://imaginative-souffle-069340.netlify.app/
 
 ## Overview
