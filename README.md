@@ -13,7 +13,7 @@ BudgetBuddy is an application designed to handle budgets in an easy and fast way
 - **JavaScript**: My application is developed using JavaScript, allowing for dynamic and interactive user experiences.
 - **Progressive Web App (PWA)**: By being a PWA, BudgetBuddy offers enhanced performance, offline functionality, and the ability to be installed on various devices without the need for app stores.
 - **IndexedDB**: It utilizes IndexedDB as the backend for BudgetBuddy ensuring efficient data storage and retrieval. It seamlessly handles budgets and expenses related to these budgets.
-                 This also means that you data is only stored locally on your own device, which means no sensitive data is used elsewhere but on your own device. 
+                 This also means that your data is only stored locally on your own device, which means no sensitive data is used elsewhere but on your own device. 
 
 ## Installation
 
