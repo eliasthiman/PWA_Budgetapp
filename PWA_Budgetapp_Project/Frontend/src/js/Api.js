@@ -46,7 +46,6 @@ class Api{
 			}
 			const result = await response.json(); 
 			if(result){
-			//	const object = JSON.parse(result);
 				this.attempt = 0;
 				console.log("RESULT FROM API CALL!", result);
 				console.log(response.status);
