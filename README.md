@@ -1,6 +1,7 @@
 # JavaScript PWA with IndexedDB Backend
 
 Welcome to BudgetBuddy! This is a Progressive Web Application (PWA) built with JavaScript, leveraging the power of IndexedDB as its backend storage solution.
+Note! The documentation for the application is written in Swedish.
 
 ## Published link to application
 
