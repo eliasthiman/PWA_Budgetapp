@@ -120,7 +120,7 @@ createSelectedWindow(id, ogBudgetSum, dateStart, dateEnd){
   progressAmount.innerHTML = `${percent}%`;
 
   let budgetSum = document.getElementById("sum-ogsum");
-  budgetSum.innerHTML = `${this.sum} remaing of ${ogBudgetSum}`; 
+  budgetSum.innerHTML = `${this.sum} remaining of ${ogBudgetSum}`; 
 } 
 
 
