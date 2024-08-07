@@ -5,7 +5,7 @@ Note! The documentation for the application is written in Swedish.
 
 ## Published link to application
 
-Best viewed on a mobile phone or a tablet, since it's developed to be portable.
+NOTE! Best viewed on a mobile phone or a tablet, since it's developed to be portable.
 
 https://imaginative-souffle-069340.netlify.app/
 
