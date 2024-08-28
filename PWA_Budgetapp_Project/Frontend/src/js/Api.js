@@ -20,7 +20,7 @@ class Api{
 	this.options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '',
+			'X-RapidAPI-Key': 'get-your-own-api-key-at-rapidapi',
 			'X-RapidAPI-Host': 'cost-of-living-and-prices.p.rapidapi.com'
 		}
 	};
