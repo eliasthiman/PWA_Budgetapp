@@ -51,8 +51,7 @@ class Suggestion{
         this.category = category;
         this.size = size;
 
-        this.result = null
-    //    this.avgItems = [];
+        this.result = null;
         this.generateSuggestion();
     }
 
@@ -63,7 +62,7 @@ class Suggestion{
         const api = new Api(this.city);
         let response = await api.apiCall();
 
-        console.log("apiCall() respone", response);
+        //console.log("apiCall() respone", response);
 
         if(!response){
             this.emptyApiCall();
@@ -108,8 +107,6 @@ class Suggestion{
 
         let suggestionWindow = new Window();
         suggestionWindow.createColElement(avgBudget, this.size, this.category);
-    
-
     }
 
 
@@ -147,14 +144,8 @@ class Suggestion{
 
         }
 
-        // Representation av en månads budget
-        //avgBudget = ((Math.floor(avgBudget / 100) * 100) * 2) * this.size;
-
         let suggestionWindow = new Window();
         suggestionWindow.createColElement(avgBudget, this.size, this.category);
-    
-
-
     }
 
 
@@ -163,9 +154,8 @@ class Suggestion{
         let avgBudget = 0;
 
         for(let i = 0; i < result.length; i++){
-        //    if(result[i].affordable_item){
+       
                 avgBudget += result[i].affordable_item;
-        //    }
 
                 this.category = "Clothing";                
         }
@@ -174,15 +164,10 @@ class Suggestion{
 
         let suggestionWindow = new Window();
         suggestionWindow.createColElement(avgBudget, this.size, this.category);
-
-
     }
 
-
-
     emptyApiCall(){
-
         let suggestionWindow = new Window();
-        suggestionWindow.createColElement("error something went wrong with the API, please check your internet connection and try again ", "error1", "error2"); 
+        suggestionWindow.createErrorElement("Oops! Something went wrong, please check your internet connection and try again later.");
     }
 }

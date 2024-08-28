@@ -20,7 +20,7 @@ class Api{
 	this.options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': 'get your own key from rapidapi.com', 
+			'X-RapidAPI-Key': '',
 			'X-RapidAPI-Host': 'cost-of-living-and-prices.p.rapidapi.com'
 		}
 	};
@@ -40,12 +40,13 @@ class Api{
 	async apiCall(){
 		try {
 			const response = await fetch(this.url, this.options);
-			if(response.status === 429 || response.status === 500 || response.status === 400){
-				console.log("API rate limit reached || internal server error! || bad request!", response.status);
+			if(response.status === 429 || response.status === 500 || response.status === 400 || response.status === 401){
+				console.log("Something went wrong with the API call, please check your API key and other settings!", response.status);
 				return null;
 			}
 			const result = await response.json(); 
 			if(result){
+			//	const object = JSON.parse(result);
 				this.attempt = 0;
 				console.log("RESULT FROM API CALL!", result);
 				console.log(response.status);

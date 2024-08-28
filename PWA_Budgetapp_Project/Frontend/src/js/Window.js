@@ -58,6 +58,10 @@ function createDOMElement(tagName, innerHTMLContent, classname, idName) {
  * element som behövs och populerar dem med den information som behövs 
  * för att visa information till användaren om förslag på budgetstorlek. 
  * 
+ * @method createErrorElement används i Suggestion klassen, skapar ett felmeddelande 
+ * när något går fel med att hämta data från REST-API.
+ * 
+ * 
  */
 
 
@@ -183,7 +187,7 @@ createExpenseElement(budget, id){
   tableRow.appendChild(tableItemTitle); 
   tableRow.appendChild(tableItemSum);
   tableRow.appendChild(tableItemBudget); 
-  }
+}
 
 
 createColElement(budgetSum, size, category){
@@ -196,38 +200,69 @@ createColElement(budgetSum, size, category){
   suggestionBox.appendChild(loader);
   parentBox.appendChild(suggestionBox);
 
-  
   setTimeout(() => {
      
-      loader.classList.add("loader--hidden");
+    loader.classList.add("loader--hidden");
 
-      const grammar = size > 1 ? "people" : "person";
-      const title = createDOMElement("h3", `Average monthly ${category} budget for ${size} ${grammar}.`, null, "title");
-      title.value = title;
+    const grammar = size > 1 ? "people" : "person";
+    const title = createDOMElement("h3", `Average monthly ${category} budget for ${size} ${grammar}.`, null, "title");
+    title.value = title;
 
-      const suggestionBudget = createDOMElement("h3", `${budgetSum} SEK`, null, "budget");
-      suggestionBudget.value = budgetSum;
-      const answerBox = createDOMElement("div", null, "answer-box", null);
-      const prompTitle = createDOMElement("h4", "Would you like to create this budget?", null, null);
+    const suggestionBudget = createDOMElement("h3", `${budgetSum} SEK`, null, "budget");
+    suggestionBudget.value = budgetSum;
+    const answerBox = createDOMElement("div", null, "answer-box", null);
+    const prompTitle = createDOMElement("h4", "Would you like to create this budget?", null, null);
 
-      const yesBtn = createDOMElement("button", "Yes", null, "answer-Btn Yes");
-      yesBtn.addEventListener("click", () => {
-          let budget = new Budget(`${category} for ${size} ${grammar}`, budgetSum);
-      });
+    const yesBtn = createDOMElement("button", "Yes", null, "answer-Btn Yes");
+    yesBtn.addEventListener("click", () => {
+        let budget = new Budget(`${category} for ${size} ${grammar}`, budgetSum);
+    });
 
-      const noBtn = createDOMElement("button", "No", null, "answer-Btn No");
-      noBtn.addEventListener("click", () => {
-          location.reload();
-      });
+    const noBtn = createDOMElement("button", "No", null, "answer-Btn No");
+    noBtn.addEventListener("click", () => {
+        location.reload();
+    });
 
-      suggestionBox.removeChild(loader);
-      answerBox.appendChild(yesBtn);
-      answerBox.appendChild(noBtn);
-      suggestionBox.appendChild(title);
-      suggestionBox.appendChild(suggestionBudget);
-      suggestionBox.appendChild(prompTitle);
-      suggestionBox.appendChild(answerBox);
+    suggestionBox.removeChild(loader);
+    answerBox.appendChild(yesBtn);
+    answerBox.appendChild(noBtn);
+    suggestionBox.appendChild(title);
+    suggestionBox.appendChild(suggestionBudget);
+    suggestionBox.appendChild(prompTitle);
+    suggestionBox.appendChild(answerBox);
   }, 2000); 
+  }
+
+
+createErrorElement(errorMessage){ 
+
+  const parentBox = document.getElementsByClassName("col-output")[0];
+  const suggestionBox = createDOMElement("div", null, "suggestion-box", null);
+  const loader = createDOMElement("div", null, "loader", null);
+
+  suggestionBox.appendChild(loader);
+  parentBox.appendChild(suggestionBox);
+
+  setTimeout(() => {
+     
+    loader.classList.add("loader--hidden");
+    
+    const title = createDOMElement("h3", errorMessage, null, "title");
+    title.value = title;
+
+    const answerBox = createDOMElement("div", null, "answer-box", null);
+    const reloadBtn = createDOMElement("button", "Reload", null, "answer-Btn No");
+    reloadBtn.addEventListener("click", () => {
+        location.reload();
+    });
+
+    suggestionBox.removeChild(loader);
+    suggestionBox.appendChild(title);
+    suggestionBox.appendChild(answerBox);
+    answerBox.appendChild(reloadBtn);
+  }, 2000); 
+  }
 }
-  
-}
+
+
+
