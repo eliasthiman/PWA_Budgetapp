@@ -24,9 +24,15 @@ BudgetBuddy is an application designed to handle budgets in an easy and fast way
 
 To get started with further development on BudgetBuddy, follow these steps:
 
+### Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/eliasthiman/PWA_Budgetapp.git
-
-# Navigate to the project directory
+```
+### Navigate to the project directory
+```bash
 cd PWA_Budgetapp_Project
+```
+### Get an API key from rapidAPI.com
+```bash
+https://rapidapi.com/
+```
