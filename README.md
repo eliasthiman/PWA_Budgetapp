@@ -30,7 +30,7 @@ git clone https://github.com/eliasthiman/PWA_Budgetapp.git
 ```
 ### Navigate to the project directory
 ```bash
-cd PWA_Budgetapp_Project
+cd PWA_Budgetapp
 ```
 ### Get an API key from rapidAPI.com if you would like to use the cost of living / auto generated budget alternatives - feature
 ```bash
