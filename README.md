@@ -32,7 +32,7 @@ git clone https://github.com/eliasthiman/PWA_Budgetapp.git
 ```bash
 cd PWA_Budgetapp_Project
 ```
-### Get an API key from rapidAPI.com if you would like to use the cost of living / auto generated budget alternatives feature
+### Get an API key from rapidAPI.com if you would like to use the cost of living / auto generated budget alternatives - feature
 ```bash
 https://rapidapi.com/
 ```
