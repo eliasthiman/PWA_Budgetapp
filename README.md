@@ -7,7 +7,7 @@ Note! The documentation for the application is written in Swedish.
 
 NOTE! Best viewed on a mobile phone or a tablet, since it's developed to be a mobile app
 
-https://imaginative-souffle-069340.netlify.app/
+https://budb.netlify.app
 
 ## Overview
 
