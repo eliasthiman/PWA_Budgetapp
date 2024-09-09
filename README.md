@@ -6,8 +6,9 @@ Note! The documentation for the application is written in Swedish.
 ## Link to application demo
 
 NOTE! Best viewed on a mobile phone or a tablet, since it's developed to be a mobile app
-
+```bash
 https://budb.netlify.app
+```
 
 ## Overview
 
